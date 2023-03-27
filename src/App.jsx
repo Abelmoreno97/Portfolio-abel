@@ -10,6 +10,15 @@ import {
   Button,
   Textarea,
   Img,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import "./App.css";
@@ -278,7 +287,7 @@ function App() {
           PROYECTOS
         </Heading>
         <HStack justifyContent="space-between" width="830px">
-          <a href="https://foods.up.railway.app/">
+          <a target="_blank" href="https://foods.up.railway.app/">
           <VStack
             borderRadius="20px"
             _hover={{
@@ -295,13 +304,13 @@ function App() {
                 src={proy1}
               ></Img>
             </Box>
-            <Text w="343px">
+            <Text textAlign="center" w="343px">
               "FoodsApp" PI de henry, aplicacion para obtener recetas desde la
               API de Spoonacular.
             </Text>
           </VStack>
           </a>
-            <a href="https://henry-pf-front.vercel.app/">
+            <a target="_blank" href="https://henry-pf-front.vercel.app/">
           <VStack
             borderRadius="20px"
             _hover={{
@@ -319,7 +328,7 @@ function App() {
                 src={proy2}
               ></Img>
             </Box>
-            <Text w="343px">
+            <Text textAlign="center" w="343px">
               "HenryGameON" PF de henry, aplicacion plataforma de jugos
               educativos de programacion y documentacion social.
             </Text>
@@ -327,7 +336,7 @@ function App() {
             </a>
         </HStack>
         <HStack justifyContent="space-between" width="830px">
-          <a href="https://www.figma.com/file/iuyz0eXd9MVXr03tHYsVTP/Portfolio-Nicole?node-id=2-2&t=xXia3H3UIHrubmAt-0">
+          <a target="_blank" href="https://www.figma.com/file/iuyz0eXd9MVXr03tHYsVTP/Portfolio-Nicole?node-id=2-2&t=xXia3H3UIHrubmAt-0">
           <VStack
             borderRadius="20px"
             _hover={{
@@ -344,14 +353,14 @@ function App() {
                 src={proy3}
               ></Img>
             </Box>
-            <Text w="343px">
+            <Text textAlign="center" w="343px">
               Portfolio de Nicole. colaboramos en equipo para realizar nuestros
               portfolio y ambos cumplimos roles de owner y proveedor. Conmigo en
               frontend con React y ella en UX/UI con Figma.
             </Text>
           </VStack>
           </a>
-          <a href="https://www.figma.com/file/HaHM7NwaJeSCB5kDn11yM2/Portfolio-Abel?node-id=1-2&t=6x7RsMFQjVr1Bd7D-0">
+          <a target="_blank" href="https://www.figma.com/file/HaHM7NwaJeSCB5kDn11yM2/Portfolio-Abel?node-id=1-2&t=6x7RsMFQjVr1Bd7D-0">
           <VStack
             borderRadius="20px"
             _hover={{
@@ -368,7 +377,7 @@ function App() {
                 src={proy4}
               ></Img>
             </Box>
-            <Text w="343px">
+            <Text textAlign="center" w="343px">
               Portfolio de Abel. colaboramos en equipo para realizar nuestros
               portfolio y ambos cumplimos roles de owner y proveedor. Conmigo en
               frontend con React y ella en UX/UI con Figma.
@@ -377,8 +386,17 @@ function App() {
           </a>
         </HStack>
         <HStack color="#FFFFFF" gap="70px">
-          <ArrowLeftIcon boxSize={8} /> <Text fontSize="40px">1</Text>{" "}
-          <ArrowRightIcon boxSize={8} />{" "}
+          <ArrowLeftIcon _hover={{
+              transform: "scale(1.65)",
+              transition: "all 0.3s ease",
+            }} boxSize={8} /> <Text  _hover={{
+              transform: "scale(1.65)",
+              transition: "all 0.3s ease",
+            }} fontSize="40px">1</Text>{" "}
+          <ArrowRightIcon  _hover={{
+              transform: "scale(1.65)",
+              transition: "all 0.3s ease",
+            }} boxSize={8} />{" "}
         </HStack>
       </VStack>
       <VStack zIndex="1" gap="15px" h="1024px" w="1000px">
@@ -799,8 +817,17 @@ function App() {
           </Box>
         </SimpleGrid>
         <HStack gap="70px" color="#FFFFFF">
-          <ArrowLeftIcon boxSize={8} /> <Text fontSize="40px">1</Text>{" "}
-          <ArrowRightIcon boxSize={8} />{" "}
+          <ArrowLeftIcon  _hover={{
+              transform: "scale(1.65)",
+              transition: "all 0.3s ease",
+            }} boxSize={8} /> <Text  _hover={{
+              transform: "scale(1.65)",
+              transition: "all 0.3s ease",
+            }} fontSize="40px">1</Text>{" "}
+          <ArrowRightIcon  _hover={{
+              transform: "scale(1.65)",
+              transition: "all 0.3s ease",
+            }} boxSize={8} />{" "}
         </HStack>
       </VStack>
       <VStack gap="15px" zIndex="1" h="874px" w="1000px">
@@ -818,7 +845,8 @@ function App() {
         <Heading color="#9C6FB7" fontSize="40px">
           CONTACTO
         </Heading>
-        <VStack width="660px">
+        <iframe style={{border:'2px solid #9C6FB7', borderRadius:'10px'}} src="https://docs.google.com/forms/d/e/1FAIpQLSfIGuUmD_xMwo2dDO_yq6-NgG18cFgE3QiEOzC08MZ88CktoA/viewform?embedded=true" width="640" height="844" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        {/* <VStack width="660px">
           <HStack width="100%">
             <Input placeholder="Nombre"></Input>{" "}
             <Input placeholder="Email"></Input>{" "}
@@ -834,7 +862,7 @@ function App() {
           >
             enviar
           </Button>
-        </VStack>
+        </VStack> */}
       </VStack>
       <SimpleGrid pt="30px" columns={4} spacing={50}>
         <a href="https://wa.me/543513851480">
@@ -847,16 +875,24 @@ function App() {
           <Image src={fot1} w="100%" h="100%"></Image>
         </Box>
         </a>
-        <a href="mailto:ejemplo@dominio.com">
-        <Box
-          _hover={{ transform: "scale(1.3)", transition: "all 0.3s ease" }}
+
+        <Popover>
+  <PopoverTrigger>
+    <Button bg="#D0A2ED"
+    p="0px"
+     _hover={{ transform: "scale(1.3)", transition: "all 0.3s ease" }}
           borderRadius="15px"
           height="70px"
-          width="80px"
-        >
-          <Image src={fot2} w="100%" h="100%"></Image>
-        </Box>
-        </a>
+          width="80px"><Image src={fot2} w="100%" h="100%"></Image></Button>
+  </PopoverTrigger>
+  <PopoverContent>
+    <PopoverArrow />
+    <PopoverCloseButton />
+    <PopoverHeader>Contacto via E-mail</PopoverHeader>
+    <PopoverBody>abelyamilmorenomp@gmail.com</PopoverBody>
+  </PopoverContent>
+</Popover>
+
         <a href="https://www.linkedin.com/in/abelmoreno97/">
         <Box
           _hover={{ transform: "scale(1.3)", transition: "all 0.3s ease" }}
