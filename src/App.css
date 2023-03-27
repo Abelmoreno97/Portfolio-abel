@@ -1,0 +1,19 @@
+#nav {
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#nav.scrolled {
+  background-color:#D0A2ED;
+}
+#link {
+font-style: normal;
+  color:white;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+#link:hover {
+  font-style: italic;
+color: black;
+  font-size: 27px;
+}
