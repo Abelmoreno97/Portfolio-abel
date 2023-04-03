@@ -155,41 +155,46 @@ function App() {
 
   return (
     // FONDO
-    <VStack style={{ height: "5120px" }}>
+    <VStack w="100%" style={{ height: "5120px" }}>
       <HStack
-        pt="40px"
+      flexDirection={["column","column","row","row"]}
+        pt={["20px","20px","40px"]}
         pb="20px"
         top={0}
         w="100%"
         justifyContent="center"
-        gap="100px"
         id="nav"
         className={isScrolled ? "scrolled" : ""}
         zIndex="10"
         position="fixed"
       >
-        <a id="link" className="volver-arriba" href="#">
-          Abel Moreno
+<HStack  justifyContent={["center","center","flex-end","flex-end"]} >
+        <a style={{ padding:'0px 20px' }} id="link" className="volver-arriba" href="#">
+          INICIO
         </a>
-        <a id="link" className="scroll-suave" href="#sec2">
+        <a style={{ padding:'0px 20px' }} id="link" className="scroll-suave" href="#sec2">
           PROYECTOS
         </a>
-        <a id="link" className="scroll-suave" href="#sec3">
+        <a style={{ padding:'0px 20px' }} id="link" className="scroll-suave" href="#sec3">
           SKILLS
         </a>
-        <a id="link" className="scroll-suave" href="#sec4">
+</HStack>
+<HStack  justifyContent={["center","center","flex-start","flex-start"]} >
+        <a style={{ padding:'0px 20px' }} id="link" className="scroll-suave" href="#sec4">
           EXPERIENCIA
         </a>
-        <a id="link" className="scroll-suave" href="#sec5">
+        <a style={{ padding:'0px 20px' }} id="link" className="scroll-suave" href="#sec5">
           CONTACTO
         </a>
+</HStack>
+
       </HStack>
       <Box w="100%">
         <Image
           top={0}
           src={foto}
           alt="My Image"
-          height="600px"
+          height={["400px","500px","600px","600px","600px"]}
           width="100%"
           position="absolute"
           zIndex="-2"
@@ -197,10 +202,20 @@ function App() {
         />
 
         <Image
-          top="1045px"
+          top={["1100px","1000px","1000px"]}
           src={Fondovioleta}
           alt="My Image"
-          height="1030px"
+          height="1100px"
+          width="100%"
+          position="absolute"
+          zIndex="-2"
+          objectFit="cover"
+        />
+         <Image
+          top={["2000px","1900px","1000px","1000px","1000px"]}
+          src={Fondovioleta}
+          alt="My Image"
+          height="1100px"
           width="100%"
           position="absolute"
           zIndex="-2"
@@ -208,34 +223,34 @@ function App() {
         />
         <Heading
           id="sec2"
-          top="1140px"
+          top={["1050px","1050px","1050px","1140px","1140px"]}
           width="100%"
           position="absolute"
           zIndex="-3"
         ></Heading>
         <Heading
           id="sec3"
-          top="2180px"
+          top={["3050px","3050px","2100px","2180px","2180px"]}
           width="100%"
           position="absolute"
           zIndex="-3"
         ></Heading>
         <Heading
           id="sec4"
-          top="3200px"
+          top={["4650px","4650px","3540px","3200px","3200px"]}
           width="100%"
           position="absolute"
           zIndex="-3"
         ></Heading>
         <Heading
           id="sec5"
-          top="4310px"
+          top={["7250px","7250px","5300px","4300px","4300px"]}
           width="100%"
           position="absolute"
           zIndex="-3"
         ></Heading>
         <Image
-          top="3110px"
+          top={["4650px","4650px","3510px","3110px","3110px"]}
           src={Fondovioleta}
           alt="My Image"
           height="1030px"
@@ -245,7 +260,7 @@ function App() {
           objectFit="cover"
         />
         <Image
-          top="3530px"
+          top={["5675px","5675px","4535px","3550"]}
           src={Fondovioleta}
           alt="My Image"
           height="1030px"
@@ -254,8 +269,19 @@ function App() {
           zIndex="-2"
           objectFit="cover"
         />
+          <Image
+          top={["6600px","6500px","4600px","3550"]}
+          src={Fondovioleta}
+          alt="My Image"
+          height="1030px"
+          width="100%"
+          position="absolute"
+          zIndex="-2"
+          objectFit="cover"
+        />
+ 
         <Image
-          top="5020px"
+          top={["8050px","7980px","6040px", "5020px"]}
           src={footer}
           alt="My Image"
           height="150px"
@@ -267,10 +293,10 @@ function App() {
       </Box>
 
       {/* FRENTE */}
-      <VStack id="section-1" zIndex="1" h="1024px" w="1000px">
-        <Image src={nombre} w="488px" h="192px" mt="204px" mb="80px"></Image>
+      <VStack id="section-1" zIndex="1" h="1024px" w={["100%","100%","100%","1000px"]}>
+        <Image src={nombre} w="488px" h="192px" mt={["85px","85px","204px","204px","204px"]} mb="80px"></Image>
         <Image src={about} w="237px" h="237px"></Image>
-        <Text textAlign="center" width="830px" fontSize="20px">
+        <Text textAlign="center" width={["400px","480px","800px","830px","830px"]} fontSize="20px">
           Full Stack Developer con background en administración contable y
           técnico en automotores que me ayudaron a tomar decisiones estratégicas
           y relacionarme en un entorno empresarial. Conocimientos en
@@ -282,11 +308,11 @@ function App() {
           trabajo. Nivel de Inglés: A2 (elementary).
         </Text>
       </VStack>
-      <VStack id="section-2" gap="10px" zIndex="1" h="1024px" w="1000px">
+      <VStack id="section-2" gap="10px" zIndex="1" h={["2000px","2000px","1024px","1024px"]} w={["100%","100%","100%","1000px"]}>
         <Heading fontSize="40px" color="white" mt="90px" mb="10px">
           PROYECTOS
         </Heading>
-        <HStack justifyContent="space-between" width="830px">
+        <HStack justifyContent="center" flexDirection={["column","column","row","row","row"]} gap="100px" w={["100%","100%","100%","1000px"]}>
           <a target="_blank" href="https://foods.up.railway.app/">
           <VStack
             borderRadius="20px"
@@ -335,8 +361,8 @@ function App() {
           </VStack>
             </a>
         </HStack>
-        <HStack justifyContent="space-between" width="830px">
-          <a target="_blank" href="https://www.figma.com/file/iuyz0eXd9MVXr03tHYsVTP/Portfolio-Nicole?node-id=2-2&t=xXia3H3UIHrubmAt-0">
+        <HStack justifyContent="center" flexDirection={["column","column","row","row","row"]} gap="100px" w={["100%","100%","100%","1000px"]}>
+          <a target="_blank" href="https://200-bucket.s3.sa-east-1.amazonaws.com/index.html ">
           <VStack
             borderRadius="20px"
             _hover={{
@@ -360,7 +386,7 @@ function App() {
             </Text>
           </VStack>
           </a>
-          <a target="_blank" href="https://www.figma.com/file/HaHM7NwaJeSCB5kDn11yM2/Portfolio-Abel?node-id=1-2&t=6x7RsMFQjVr1Bd7D-0">
+          <a target="_blank" href="https://199-bucket.s3.sa-east-1.amazonaws.com/index.html">
           <VStack
             borderRadius="20px"
             _hover={{
@@ -385,7 +411,7 @@ function App() {
           </VStack>
           </a>
         </HStack>
-        <HStack color="#FFFFFF" gap="70px">
+        <HStack  color="#FFFFFF" gap="70px">
           <ArrowLeftIcon _hover={{
               transform: "scale(1.65)",
               transition: "all 0.3s ease",
@@ -399,82 +425,82 @@ function App() {
             }} boxSize={8} />{" "}
         </HStack>
       </VStack>
-      <VStack zIndex="1" gap="15px" h="1024px" w="1000px">
+      <VStack  zIndex="1" gap={["80px","15px"]} h={["1600px","1600px","1600px", "1024px"]} w={["100%","100%","100%","1000px"]}>
         <Heading mt="110px" mb="10px" color="#9C6FB7" fontSize="40px">
           SKILLS
         </Heading>
         <Heading mb="20px" fontSize="35px" fontWeight="normal">
           TECH SKILLS
         </Heading>
-
-        <SimpleGrid columns={6} spacing={19}>
+      
+        <SimpleGrid style={{ justifyContent: "center" }} columns={[3,3,4,6]} spacing={19}>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img borderRadius="15px" width="100%" height="100%" src={Te1}></Img>
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img borderRadius="15px" width="100%" height="100%" src={Te2}></Img>
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img borderRadius="15px" width="100%" height="100%" src={Te3}></Img>
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img borderRadius="15px" width="100%" height="100%" src={Te4}></Img>
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img borderRadius="15px" width="100%" height="100%" src={Te5}></Img>
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img borderRadius="15px" width="100%" height="100%" src={Te6}></Img>
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img borderRadius="15px" width="100%" height="100%" src={Te7}></Img>
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img borderRadius="15px" width="100%" height="100%" src={Te8}></Img>
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img borderRadius="15px" width="100%" height="100%" src={Te9}></Img>
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img
               borderRadius="15px"
@@ -485,8 +511,8 @@ function App() {
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img
               borderRadius="15px"
@@ -497,8 +523,8 @@ function App() {
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img
               borderRadius="15px"
@@ -509,8 +535,8 @@ function App() {
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img
               borderRadius="15px"
@@ -521,8 +547,8 @@ function App() {
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img
               borderRadius="15px"
@@ -533,8 +559,8 @@ function App() {
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img
               borderRadius="15px"
@@ -545,8 +571,8 @@ function App() {
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img
               borderRadius="15px"
@@ -557,8 +583,8 @@ function App() {
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img
               borderRadius="15px"
@@ -569,8 +595,8 @@ function App() {
           </Box>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
-            height="140px"
-            width="150px"
+            height={["95px","140px"]}
+            width={["100px","150px"]}
           >
             <Img
               borderRadius="15px"
@@ -580,22 +606,23 @@ function App() {
             ></Img>
           </Box>
         </SimpleGrid>
+      
         <Heading mb="20px" fontSize="35px" fontWeight="normal">
           SOFT SKILLS
         </Heading>
 
-        <SimpleGrid columns={4} spacing={19}>
+        <SimpleGrid columns={[2,2,2,4]} spacing={19}>
           <Box
             _hover={{ transform: "scale(1.15)", transition: "all 0.3s ease" }}
             textAlign="center"
             p="13px"
             bg="#D0A2ED"
             borderRadius="15px"
-            height="65px"
-            width="235px"
+            height={["50px","65px"]}
+            width={["190px","235px"]}
           >
             {" "}
-            <Text fontSize="25px">INGENIO</Text>{" "}
+            <Text fontSize={["20px","25px"]}>INGENIO</Text>{" "}
           </Box>
           <Box
             _hover={{ transform: "scale(1.15)", transition: "all 0.3s ease" }}
@@ -603,10 +630,10 @@ function App() {
             p="13px"
             bg="#D0A2ED"
             borderRadius="15px"
-            height="65px"
-            width="235px"
+            height={["50px","65px"]}
+            width={["190px","235px"]}
           >
-            <Text fontSize="25px">CREATIVIDAD</Text>
+            <Text fontSize={["20px","25px"]}>CREATIVIDAD</Text>
           </Box>
           <Box
             _hover={{ transform: "scale(1.15)", transition: "all 0.3s ease" }}
@@ -614,10 +641,10 @@ function App() {
             p="13px"
             border="2px solid #D0A2ED"
             borderRadius="15px"
-            height="65px"
-            width="235px"
+            height={["50px","65px"]}
+            width={["190px","235px"]}
           >
-            <Text fontSize="25px">COMPROMISO</Text>
+            <Text fontSize={["20px","25px"]}>COMPROMISO</Text>
           </Box>
           <Box
             _hover={{ transform: "scale(1.15)", transition: "all 0.3s ease" }}
@@ -625,10 +652,10 @@ function App() {
             p="13px"
             border="2px solid #D0A2ED"
             borderRadius="15px"
-            height="65px"
-            width="235px"
+            height={["50px","65px"]}
+            width={["190px","235px"]}
           >
-            <Text fontSize="25px">DETERMINACIÓN</Text>
+            <Text fontSize={["20px","25px"]}>DETERMINACIÓN</Text>
           </Box>
           <Box
             _hover={{ transform: "scale(1.15)", transition: "all 0.3s ease" }}
@@ -636,10 +663,10 @@ function App() {
             p="13px"
             border="2px solid #D0A2ED"
             borderRadius="15px"
-            height="65px"
-            width="235px"
+            height={["50px","65px"]}
+            width={["190px","235px"]}
           >
-            <Text fontSize="25px">LIDERAZGO</Text>
+            <Text fontSize={["20px","25px"]}>LIDERAZGO</Text>
           </Box>
           <Box
             _hover={{ transform: "scale(1.15)", transition: "all 0.3s ease" }}
@@ -647,10 +674,10 @@ function App() {
             p="13px"
             border="2px solid #D0A2ED"
             borderRadius="15px"
-            height="65px"
-            width="235px"
+            height={["50px","65px"]}
+            width={["190px","235px"]}
           >
-            <Text fontSize="25px">EMPATIA</Text>
+            <Text fontSize={["20px","25px"]}>EMPATIA</Text>
           </Box>
           <Box
             _hover={{ transform: "scale(1.15)", transition: "all 0.3s ease" }}
@@ -658,10 +685,10 @@ function App() {
             p="13px"
             bg="#D0A2ED"
             borderRadius="15px"
-            height="65px"
-            width="235px"
+            height={["50px","65px"]}
+            width={["190px","235px"]}
           >
-            <Text fontSize="25px">HUMILDAD</Text>
+            <Text fontSize={["20px","25px"]}>HUMILDAD</Text>
           </Box>
           <Box
             _hover={{ transform: "scale(1.15)", transition: "all 0.3s ease" }}
@@ -669,14 +696,14 @@ function App() {
             p="13px"
             bg="#D0A2ED"
             borderRadius="15px"
-            height="65px"
-            width="235px"
+            height={["50px","65px"]}
+            width={["190px","235px"]}
           >
-            <Text fontSize="25px">AMBICIÓN</Text>
+            <Text fontSize={["20px","25px"]}>AMBICIÓN</Text>
           </Box>
         </SimpleGrid>
       </VStack>
-      <VStack gap="20px" zIndex="1" h="1024px" w="1000px">
+      <VStack gap="20px" zIndex="1" h={["2500px","2500px","1700px","1024px"]} w={["100%","100%","100%","1000px"]}>
         <Heading
           mt="110px"
           mb="10px"
@@ -686,7 +713,9 @@ function App() {
         >
           EXPERIENCIAS PREVIAS
         </Heading>
-        <SimpleGrid columns={3} spacing={10}>
+        
+        <HStack flexDirection={["column","column","column","row","row"]}>
+          <HStack flexDirection={["column","column","row"]} mb={["100px","100px","100px","0px", "0px"]}>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
             height="335px"
@@ -722,6 +751,8 @@ function App() {
               <br></br> *Inspeccion en base a la ley de transito.
             </Text>
           </Box>
+          </HStack>
+          <HStack>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
             height="335px"
@@ -740,7 +771,10 @@ function App() {
               *Adaptacion "horarios rotativos"
             </Text>
           </Box>
-        </SimpleGrid>
+          </HStack>
+        </HStack>
+ 
+
         <Heading
           mt="110px"
           mb="10px"
@@ -750,7 +784,7 @@ function App() {
         >
           CERTIFICADOS
         </Heading>
-        <SimpleGrid columns={4} spacing={5}>
+        <SimpleGrid columns={[1,1,2,4]} spacing={5}>
           <Box
             _hover={{ transform: "scale(1.20)", transition: "all 0.3s ease" }}
             height="260px"
@@ -830,11 +864,11 @@ function App() {
             }} boxSize={8} />{" "}
         </HStack>
       </VStack>
-      <VStack gap="15px" zIndex="1" h="874px" w="1000px">
-        <Heading mt="110px" mb="10px" color="#FFFFFF" fontSize="40px">
+      <VStack gap="15px" zIndex="1" h={["960px","900px","874px"]} w={["100%","100%","100%","1000px"]}>
+        <Heading mt={["200px","110px"]} mb="10px" color="#FFFFFF" fontSize={["30px","30px","40px"]}>
           OTROS DATOS DE INTERES
         </Heading>
-        <Text color="#FFFFFF" width="810px" fontSize="25px">
+        <Text color="#FFFFFF" width={["400px","500px","600px","810px"]} fontSize={["20px","20px","23px","25px","25px"]}>
           * Idiomas: Español (Nativo) // Inglés (A2).<br></br>* Secundario
           técnico completo cursado en “IPEM 247 ing. Carlos A. Cassaffousth”
           Orientación: Técnico en automotores.<br></br>* Disponibilidad
@@ -845,7 +879,9 @@ function App() {
         <Heading color="#9C6FB7" fontSize="40px">
           CONTACTO
         </Heading>
-        <iframe style={{border:'2px solid #9C6FB7', borderRadius:'10px'}} src="https://docs.google.com/forms/d/e/1FAIpQLSfIGuUmD_xMwo2dDO_yq6-NgG18cFgE3QiEOzC08MZ88CktoA/viewform?embedded=true" width="640" height="844" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        <Box w={["380px","470px","660px","660px"]} h={["500px","500px","500px","800px","800px"]}>
+        <iframe style={{border:'2px solid #9C6FB7', borderRadius:'10px'}} src="https://docs.google.com/forms/d/e/1FAIpQLSfIGuUmD_xMwo2dDO_yq6-NgG18cFgE3QiEOzC08MZ88CktoA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        </Box>
         {/* <VStack width="660px">
           <HStack width="100%">
             <Input placeholder="Nombre"></Input>{" "}
@@ -869,8 +905,8 @@ function App() {
         <Box 
           _hover={{ transform: "scale(1.3)", transition: "all 0.3s ease" }}
           borderRadius="15px"
-          height="70px"
-          width="80px"
+          height="65px"
+          width="75px"
         >
           <Image src={fot1} w="100%" h="100%"></Image>
         </Box>
@@ -882,8 +918,8 @@ function App() {
     p="0px"
      _hover={{ transform: "scale(1.3)", transition: "all 0.3s ease" }}
           borderRadius="15px"
-          height="70px"
-          width="80px"><Image src={fot2} w="100%" h="100%"></Image></Button>
+          height="65px"
+          width="75px"><Image src={fot2} w="100%" h="100%"></Image></Button>
   </PopoverTrigger>
   <PopoverContent>
     <PopoverArrow />
@@ -897,8 +933,8 @@ function App() {
         <Box
           _hover={{ transform: "scale(1.3)", transition: "all 0.3s ease" }}
           borderRadius="15px"
-          height="70px"
-          width="80px"
+          height="65px"
+          width="75px"
         >
           <Image src={fot3} w="100%" h="100%"></Image>
         </Box>
@@ -907,8 +943,8 @@ function App() {
         <Box
           _hover={{ transform: "scale(1.3)", transition: "all 0.3s ease" }}
           borderRadius="15px"
-          height="70px"
-          width="80px"
+          height="65px"
+          width="75px"
         >
           <Image src={fot4} w="100%" h="100%"></Image>
         </Box>
